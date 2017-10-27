@@ -1,0 +1,38 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Promises and file IO</title>
+	<link rel="stylesheet" href="">
+</head>
+<script>
+
+const fs = require('fs');
+
+fs.readdir('./data', (err, files) => {
+	files.map((fileName,index) => {
+		console.log(fileName);
+		fs.readFile(`./data/${fileName}`, (err, data) => {
+			console.log(fileName);
+			if (err) throw err;
+			// console.log(data);
+		});
+	});
+})
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+	
+</body>
+</html>
